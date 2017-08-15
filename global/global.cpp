@@ -1,3 +1,13 @@
+/*
+Test results showed that:
+1) Class member access is slower than access of an independent variable;
+this is because the access of the class member has to be after the dereference
+of corresponding object.
+2) b.add() is compiled to some add(B b); although no need to derefer, it is 
+still slower than the global function add(), as add(B b) always need the B type
+parameter to be passed. 
+*/
+
 #include <iostream>
 #include <sys/time.h>
 
